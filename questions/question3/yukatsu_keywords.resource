@@ -35,7 +35,6 @@ Seleniumメインページ上の「About」ボタンをクリックする
     Click Link    partial link=About
     
 About Seleniumページ上の「News/Blog」をクリックする
-    #Click Element    css=h3:nth-child(3) > a
     Click Link    partial link=News/Blog
     
 ページタイトルが「Selenium News」になっていることを確認する
