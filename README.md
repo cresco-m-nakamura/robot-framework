@@ -41,3 +41,20 @@
 	よって、コマンドプロンプト上でrobotコマンドが実行できない場合は、下記のサイトを参考に
 	環境変数PATHにinstallした(chromedriver.exeがある)ディレクトリの追加をお願いします。
 	参考：https://www.atmarkit.co.jp/ait/articles/1805/11/news035.html
+
+## 環境の確認方法
+	添付ファイルを任意のディレクトリ（特に希望がない場合は、chromedriver.exeと同じ場所「C:\robot」
+        配下してください）にsample.robotを置き、コマンドプロンプト上で以下のコマンドを
+        実行して、自動テストが動作するか確認お願いします。
+	> robot sample.robot
+
+        上記実行後、Chromeブラウザが動き出し、コマンドプロンプト上で「2 critical tests, 1 passed, 1 failed」の
+        結果が表示され、コマンドを実行したディレクトリに「report.html」が作成されれば、環境設定は完了です。
+        実行後のディレクトリ内のファイル一覧
+        C:\robot>tree /f
+          chromedriver.exe
+          log.html
+          output.xml
+          report.html
+          sample.robot
+          selenium-screenshot-1.png
