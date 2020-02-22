@@ -10,7 +10,7 @@ Library    Selenium2Library
     証券コードが「4674」であることを確認する
     ブラウザを閉じる
 
-SeleniumのNews/Blogページのタイトルを確認するテスト
+SeleniumのBlogページのタイトルを確認するテスト
     Google(https://www.google.co.jp/)にアクセス
     検索ボックスに「SeleniumHQ」の文字を入力後、エンターキー押下する
     検索結果画面から、「Selenium - Web Browser Automation」をクリックする
