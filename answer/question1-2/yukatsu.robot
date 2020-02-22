@@ -15,8 +15,8 @@ SeleniumのNews/Blogページのタイトルを確認するテスト
     検索ボックスに「SeleniumHQ」の文字を入力後、エンターキー押下する
     検索結果画面から、「Selenium - Web Browser Automation」をクリックする
     Seleniumメインページ上の「About」ボタンをクリックする
-    About Seleniumページ上の「News/Blog」をクリックする
-    ページタイトルが「Selenium News」になっていることを確認する
+    About Seleniumページ上の「Blog」をクリックする
+    ページタイトルが「Selenium Blog」になっていることを確認する
     ブラウザを閉じる
 
 *** Variables ***
@@ -47,14 +47,14 @@ Google(https://www.google.co.jp/)にアクセス
     press keys   name=q    ENTER
     
 検索結果画面から、「Selenium - Web Browser Automation」をクリックする
-    Click Link    partial link=Selenium - Web Browser Automation
+    Click Link    partial link=SeleniumHQ Browser Automation
     
 Seleniumメインページ上の「About」ボタンをクリックする
     Click Link    partial link=About
     
-About Seleniumページ上の「News/Blog」をクリックする
-    Click Link    partial link=News/Blog
+About Seleniumページ上の「Blog」をクリックする
+    Click Link    partial link=Blog
     
-ページタイトルが「Selenium News」になっていることを確認する
-    Title Should Be    Selenium News
+ページタイトルが「Selenium Blog」になっていることを確認する
+    Title Should Be    Selenium Blog
 
