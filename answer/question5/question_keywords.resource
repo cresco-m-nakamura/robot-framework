@@ -1,24 +1,6 @@
-*** Settings ***
-Documentation    cresco yukatsu
-Library    Selenium2Library
-Test Setup    ブラウザを起動、Google検索サイトにアクセス
-Test Teardown    ブラウザを閉じる
-
 *** Variables ***
 ${BASE_URL}    https://www.google.co.jp
 ${BROWSER}    Chrome
-
-*** Test Cases ***
-クレスコのIR番号を確認するテスト
-    検索ボックスに「クレスコ」の文字を入力後、検索ボタンを押下する
-    検索結果画面から「会社概要」をクリックする
-    証券コードが「4674」であることを確認する
-
-SeleniumのBlogページのタイトルを確認するテスト
-    検索ボックスに「SeleniumHQ」の文字を入力後、エンターキー押下する
-    検索結果画面から、「SeleniumHQ Browser Automation」をクリックする
-    About Seleniumページ上の「Blog」をクリックする
-    ページタイトルが「Selenium Blog」になっていることを確認する
 
 *** Keyword ***
 ブラウザを起動、Google検索サイトにアクセス
@@ -27,7 +9,7 @@ SeleniumのBlogページのタイトルを確認するテスト
 ブラウザを閉じる
     Close Browser
 
-検索ボックスに「クレスコ」の文字を入力後、検索ボタンを押下する
+検索ボックスに「クレスコ」の文字を入力後、エンターキー押下する
     Input Text    name=q    クレスコ
     Sleep    2
     Click Button    name=btnK
@@ -41,7 +23,7 @@ SeleniumのBlogページのタイトルを確認するテスト
 検索ボックスに「SeleniumHQ」の文字を入力後、エンターキー押下する
     Input Text    name=q    SeleniumHQ
     Sleep    1
-    press keys    name=q    ENTER
+    Press keys    name=q    ENTER
     Sleep    1
 
 検索結果画面から、「SeleniumHQ Browser Automation」をクリックする
@@ -52,3 +34,8 @@ About Seleniumページ上の「Blog」をクリックする
 
 ページタイトルが「Selenium Blog」になっていることを確認する
     Title Should Be    Selenium Blog
+
+検索ボックスに次のキーワードを入力する
+    [Arguments]    ${keyword}
+    Input Text    name=q    ${keyword}
+    Press keys   name=q    ENTER
