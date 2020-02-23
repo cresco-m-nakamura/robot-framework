@@ -27,6 +27,6 @@ question3で作成したファイル「question3.robot」を「question4.robot�
 	　　　　：
 	Resource    question_keywords.resource
 
-question4.robotのSettingsセクションでquestion4_keywords.resourceを読み込ませる。  
+question4.robotのSettingsセクションでquestion_keywords.resourceを読み込ませる。  
 
 ----

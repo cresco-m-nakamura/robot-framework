@@ -9,7 +9,7 @@ ${BROWSER}    Chrome
 ブラウザを閉じる
     Close Browser
 
-検索ボックスに「クレスコ」の文字を入力後、エンターキー押下する
+検索ボックスに「クレスコ」の文字を入力後、検索ボタンを押下する
     Input Text    name=q    クレスコ
     Sleep    2
     Click Button    name=btnK
