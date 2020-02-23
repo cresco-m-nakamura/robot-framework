@@ -1,23 +1,15 @@
 # Question4
-## 重複したKeywordを共通化して、テスト開始、終了時呼び出しなさい
+## Variables, Keywordを分離して、リソースファイルを作成しなさい
 
-### Variables、Keywordセクションを別ファイルに分け、アクションを共通化する
-テストデータ（yukatsu.robot）のSettingsセクションで上記ファイルを読み込ませる  
-
-yukatsu.robot  
-
-	*** Settings ***
-	　　　　：
-	Resource    yukatsu_keywords.resource
-
-「yukatsu_keywords.resource」を作成し、課題1,2で作成したVariables、Keyword
-セクションを保存する。  
+### Variables、Keywordセクションをリソースファイルに分ける
+question3で作成したファイル「question3.robot」を「question4.robot」にリネームする。  
   
-yukatsu_keywords.resource  
-
+----
+### question_keywords.resource  
 	*** Variables ***
 	${BASE_URL}    https://www.google.co.jp
 	${BROWSER}    Chrome
+	    :
 	
 	*** Keyword ***
 	ブラウザを起動、Google検索サイトにアクセス
@@ -25,30 +17,16 @@ yukatsu_keywords.resource
 	
 	ブラウザを閉じる
 	    Close Browser
-	
-
-### question1,2で作成した下記のユーザ定義キーワードをテスト開始、終了時呼び出す
-  1. Google(https://www.google.co.jp/)にアクセス
-  2. ブラウザを閉じる
-
+	    :
+	    :
+「question_keywords.resource」を新規作成し、question4.robotの中にあるVariables、Keywordセクションを保存する。    
+  
+----
+### question4.robot  
 	*** Settings ***
-	       ：
-	Test Setup    Google(https://www.google.co.jp/)にアクセス
-	Test Teardown    ブラウザを閉じる
+	　　　　：
+	Resource    question_keywords.resource
 
+question4.robotのSettingsセクションでquestion4_keywords.resourceを読み込ませる。  
 
-## 重複したキーワードを共通化し、引数を与えて実行しなさい
-下記のユーザ定義キーワードに代わり  
-
-	検索ボックスに「クレスコ」の文字を入力後、エンターキー押下する  
-	検索ボックスに「SeleniumHQ」の文字を入力後、エンターキー押下する  
-下記のユーザ定義キーワードを新規作成して、引数で検索文字を渡すようにする  
-
-	検索ボックスに次のキーワードを入力する  
-
-	*** Keyword ***
-	    ：
-	検索ボックスに次のキーワードを入力する
-	    [Arguments]    ${keyword}
-	    Input Text    name=q    ${keyword}
-	    press keys   name=q    ENTER
+----
